@@ -1,5 +1,11 @@
 # Officew Viewer
 
+## Fork notice
+
+Office Viewer Plus is a fork of [cweijan/vscode-office](https://github.com/cweijan/vscode-office). The original Office Viewer extension, its office-file preview features, and most of the extension architecture were created by the original author and contributors.
+
+This fork is published separately so it can update the Markdown editor engine: the bundled Vditor assets were upgraded to `vditor@3.11.2`, Mermaid was upgraded to `11.11.0`, and the Markdown editor now loads these assets from the extension package instead of a remote CDN. The goal is better local/offline Markdown editing and improved Mermaid rendering while preserving the original extension's work.
+
 ## Introduction
 
 English | [简体中文](README-CN.md) | [繁體中文](README-TW.md)
@@ -54,11 +60,13 @@ Database Client for Visual Studio Code, supporting the management **MySQL/MariaD
 
 ## Credits
 
+- Original extension: [cweijan/vscode-office](https://github.com/cweijan/vscode-office)
 - PDF rendering: [mozilla/pdf.js/](https://github.com/mozilla/pdf.js/)
 - Docx rendering: [VolodymyrBaydalka/docxjs](https://github.com/VolodymyrBaydalka/docxjs)
 - XLSX rendering:
   - [SheetJS/sheetjs](https://github.com/SheetJS/sheetjs): XLSX parsing
   - [myliang/x-spreadsheet](https://github.com/myliang/x-spreadsheet): XLSX rendering
 - HTTP: [Rest  Client](https://github.com/Huachao/vscode-restclient)
-- Markdown: [Vanessa219/vditor](https://github.com/Vanessa219/vditor)
+- Markdown editor: [Vanessa219/vditor](https://github.com/Vanessa219/vditor), bundled in this fork as `vditor@3.11.2`
+- Mermaid rendering: [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid), bundled in this fork as Mermaid `11.11.0`
 - Material Icon theme: [PKief/vscode-material-icon-theme](https://github.com/PKief/vscode-material-icon-theme)
