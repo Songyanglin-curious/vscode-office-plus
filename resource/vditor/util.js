@@ -62,6 +62,65 @@ const isMac = navigator.userAgent.includes('Mac OS');
 const shortcutTip = isMac ? '⌘ ^ E' : 'Ctrl Alt E';
 
 export async function getToolbar(resPath) {
+    const [
+        vscodeIcon,
+        filesIcon,
+        pdfIcon,
+        themeIcon,
+    ] = await Promise.all([
+        loadRes(`${resPath}/icon/vscode.svg`),
+        loadRes(`${resPath}/icon/codicon-files.svg`),
+        loadRes(`${resPath}/icon/pdf.svg`),
+        loadRes(`${resPath}/icon/theme.svg`),
+    ]);
+
+    const editInVSCodeButton = {
+        tipPosition: 's',
+        tip: `Edit In VSCode (${shortcutTip})`,
+        className: 'right',
+        icon: vscodeIcon,
+        click() {
+            handler.emit("editInVSCode", true)
+        }
+    };
+    const quickOpenButton = {
+        tipPosition: 's',
+        tip: `Quick open`,
+        className: 'right',
+        icon: filesIcon,
+        click() {
+            handler.emit("quickOpen", true)
+        }
+    };
+    const exportPdfButton = {
+        tipPosition: 's',
+        tip: 'Export To Pdf',
+        className: 'right',
+        icon: pdfIcon,
+        click() {
+            handler.emit("export")
+        }
+    };
+    const selectThemeTextButton = {
+        name: 'selectTheme',
+        tipPosition: 's',
+        tip: 'Select Theme',
+        className: 'right',
+        icon: 'Theme:',
+        click() {
+            handler.emit("theme")
+        }
+    };
+    const selectThemeIconButton = {
+        tipPosition: 's',
+        tip: 'Select Theme',
+        className: 'right',
+        icon: themeIcon,
+        click() {
+            handler.emit("theme")
+        }
+    };
+
     return [
         'outline',
         "headings",
@@ -70,50 +129,7 @@ export async function getToolbar(resPath) {
         "strike",
         "link",
         "|",
-        {
-            tipPosition: 's',
-            tip: `Edit In VSCode (${shortcutTip})`,
-            className: 'right',
-            icon: await loadRes(`${resPath}/icon/vscode.svg`),
-            click() {
-                handler.emit("editInVSCode", true)
-            }
-        },
-        {
-            tipPosition: 's',
-            tip: `Quick open`,
-            className: 'right',
-            icon: await loadRes(`${resPath}/icon/codicon-files.svg`),
-            click() {
-                handler.emit("quickOpen", true)
-            }
-        },
-        {
-            tipPosition: 's',
-            tip: 'Export To Pdf',
-            className: 'right',
-            icon: await loadRes(`${resPath}/icon/pdf.svg`),
-            click() {
-                handler.emit("export")
-            }
-        },
         { name: 'upload', tipPosition: 'e' },
-        "|",
-        {
-            name: 'selectTheme',
-            tipPosition: 's', tip: 'Select Theme',
-            icon: 'Theme:',
-            click() {
-                handler.emit("theme")
-            }
-        },
-        {
-            tipPosition: 's', tip: 'Select Theme',
-            icon: await loadRes(`${resPath}/icon/theme.svg`),
-            click() {
-                handler.emit("theme")
-            }
-        },
         "|",
         // "edit-mode",  // 屏蔽掉, 现版本都是针对一种模式优化
         "code-theme",
@@ -133,6 +149,12 @@ export async function getToolbar(resPath) {
         "|",
         "preview",
         "help",
+        "|",
+        selectThemeTextButton,
+        selectThemeIconButton,
+        exportPdfButton,
+        quickOpenButton,
+        editInVSCodeButton,
     ]
 }
 

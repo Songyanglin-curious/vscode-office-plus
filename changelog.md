@@ -1,5 +1,25 @@
 # Change log
 
+# 3.5.8 2026-5-25
+- Preload the Vditor material icon script so toolbar SVG symbols render in VS Code webviews.
+- Skip the initial Vditor input callback during editor startup to avoid an unnecessary full-document save.
+- Load custom toolbar SVG assets in parallel.
+
+# 3.5.7 2026-5-25
+- Remove the extra full-document Mermaid render pass to improve Markdown open performance.
+- Restore the built-in Vditor toolbar layout with Office Viewer Plus actions grouped on the right.
+- Move fork settings to the `vscode-office-plus` namespace to avoid conflicts with the original extension.
+
+# 3.5.6 2026-5-25
+- Explicitly trigger Mermaid rendering after editor initialization and content updates.
+- Add a compatibility bridge for the bundled Mermaid global.
+
+# 3.5.5 2026-5-25
+- Fork as Office Viewer Plus for independent publishing.
+- Upgrade bundled Vditor to 3.11.2.
+- Load Vditor assets from local extension resources instead of remote CDN.
+- Improve Mermaid support with bundled Mermaid 11.11.0.
+
 # 3.5.4 2025-4-28
 - Support edit excel and csv file.
 
