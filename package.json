@@ -3,7 +3,7 @@
     "displayName": "Office Viewer Plus",
     "description": "View word,excel files and using WYSIWYG editor for markdown.",
     "version": "3.5.8",
-    "publisher": "your-publisher",
+    "publisher": "songyanglin",
     "icon": "images/logo.png",
     "engines": {
         "vscode": "^1.64.0"
