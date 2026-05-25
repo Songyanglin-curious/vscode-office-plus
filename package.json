@@ -20,12 +20,12 @@
         "Other"
     ],
     "bugs": {
-        "url": "https://github.com/YOUR_GITHUB/vscode-office-plus/issues"
+        "url": "https://github.com/Songyanglin-curious/vscode-office-plus/issues"
     },
-    "homepage": "https://github.com/YOUR_GITHUB/vscode-office-plus/blob/main/README.md",
+    "homepage": "https://github.com/Songyanglin-curious/vscode-office-plus/blob/main/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/YOUR_GITHUB/vscode-office-plus.git"
+        "url": "https://github.com/Songyanglin-curious/vscode-office-plus.git"
     },
     "activationEvents": [
         "onStartupFinished"
